@@ -30,6 +30,9 @@ namespace Install_ZVM
                 string UserName = "administrator";
                 string Password = "zertodata";
 
+
+            d
+
                 Console.WriteLine("Please prvoide the ZVM IP address");
                 SiteIp = Console.ReadLine();
                 Console.WriteLine("Please prvoide the ZVM User Name ");
