@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace Install_ZVM
 {
@@ -9,7 +10,7 @@ namespace Install_ZVM
       
         static void Main(string[] args)
         {
-            string SiteIp = "10.171.16.76";
+            string SiteIp = "10.171.32.199";
             string UserName = "root";
             string Password = "Zertodata1!";
             string License = "PXYB5WXKY6MQXF59BQMJVCFKRR43AEFU55TLB6YWNZ";
@@ -30,13 +31,21 @@ namespace Install_ZVM
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();        
             driver.Url = URL;
-
+            Thread.Sleep(3000);
 
             //Loging to GUI//
             LoginSite Site1 = new LoginSite();
             Site1.Login(driver, UserName, Password);
+            Thread.Sleep(3000);
             Site1.Enterlicense(driver, License);
+            Thread.Sleep(5000);
 
+            //Install VRA //
+            InstallVRA VRA1 = new InstallVRA();
+            VRA1.MoveToSetupTab(driver);
+
+
+            //End OF Code//
             Console.ReadKey();
             driver.Close();
 
