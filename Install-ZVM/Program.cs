@@ -10,14 +10,15 @@ namespace Install_ZVM
       
         static void Main(string[] args)
         {
+            string InstallFileName = "./";
+            string InstallFilePath = "";
             string DataStoreName = "DS1";
             string HostIp = "10.171.32.35";
             string SiteIp = "10.171.32.199";
             string UserName = "root";
             string Password = "Zertodata1!";
             string License = "PXYB5WXKY6MQXF59BQMJVCFKRR43AEFU55TLB6YWNZ";
-            var URL = "https://" + SiteIp + ":9669";
-
+         
 
             /* Console.WriteLine("Please prvoide the ZVM IP address");
                  SiteIp = Console.ReadLine();
@@ -27,11 +28,14 @@ namespace Install_ZVM
                  Password = Console.ReadLine();
             */
 
-
+            //SelintInstall//
+            SelintInstaller selintInstaller1 = new SelintInstaller();
+            selintInstaller1.RunInstall(InstallFileName, InstallFilePath);
 
             //Open Chrome and enter ZVM GUI //
             IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();        
+            driver.Manage().Window.Maximize();
+            var URL = "https://" + SiteIp + ":9669";
             driver.Url = URL;
             Thread.Sleep(3000);
 
