@@ -10,6 +10,8 @@ namespace Install_ZVM
       
         static void Main(string[] args)
         {
+            string DataStoreName = "DS1";
+            string HostIp = "10.171.32.35";
             string SiteIp = "10.171.32.199";
             string UserName = "root";
             string Password = "Zertodata1!";
@@ -42,7 +44,9 @@ namespace Install_ZVM
 
             //Install VRA //
             InstallVRA VRA1 = new InstallVRA();
-            VRA1.MoveToSetupTab(driver);
+            VRA1.MoveToSetupTab(driver, HostIp);
+            VRA1.VRAInfo(driver, HostIp, DataStoreName);
+
 
 
             //End OF Code//
