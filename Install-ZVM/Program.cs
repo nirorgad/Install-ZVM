@@ -11,7 +11,7 @@ namespace Install_ZVM
         static void Main(string[] args)
         {
             string vmType = "ZVM";
-            string InstallFilePath = "";
+            string InstallFilePath = "./";
             string DataStoreName = "DS1";
             string HostIp = "10.171.32.35";
             string SiteIp = "10.171.32.199";

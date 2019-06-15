@@ -17,30 +17,34 @@ namespace Install_ZVM
                 {
                     Console.WriteLine("Starting to install Zerto ZVM application");
                     Process process = new Process();
-                    process.StartInfo.FileName = "Zerto Virtual Replication VMware Installer.exe";
-                    process.StartInfo.Arguments = string.Format(" /qb /i \"{0}\" ALLUSERS=1", InstallFilePath);
+                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    process.StartInfo.WorkingDirectory = @InstallFilePath;
+                    process.StartInfo.FileName = "cmd.exe";
+                    process.StartInfo.Arguments = "'Zerto Virtual Replication VMware Installer.exe' -s";
                     process.Start();
                     process.WaitForExit();
-                    Console.WriteLine("Application installed successfully!");
+                    Console.WriteLine("Zerto ZVM Application installed successfully!");
                 }
                 catch
                 {
-                    Console.WriteLine("There was a problem installing the application!");
+                    Console.WriteLine("There was a problem installing the Zerto ZVMapplication!");
                 }
             }else if(vmType.Contains("ZCA"))
                 try
                 {
                     Console.WriteLine("Starting to install Zerto ZCA application");
                     Process process = new Process();
-                    process.StartInfo.FileName = "Zerto ZCA AWS Installer.exe";
-                    process.StartInfo.Arguments = string.Format(" /qb /i \"{0}\" ALLUSERS=1", InstallFilePath);
+                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    process.StartInfo.WorkingDirectory = @InstallFilePath;
+                    process.StartInfo.FileName = "cmd.exe";
+                    process.StartInfo.Arguments = "'Zerto ZCA AWS Installer.exe' -s";
                     process.Start();
                     process.WaitForExit();
-                    Console.WriteLine("Application installed successfully!");
+                    Console.WriteLine("Zerto ZCA Application installed successfully!");
                 }
                 catch
                 {
-                    Console.WriteLine("There was a problem installing the application!");
+                    Console.WriteLine("There was a problem installing the Zerto ZCA application!");
                 }
         }
     }
