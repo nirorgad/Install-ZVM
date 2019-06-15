@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Install_ZVM
 {
@@ -11,22 +8,40 @@ namespace Install_ZVM
     {
 
 
-        public void RunInstall(string InstallFileName , string InstallFilePath )
+        public void RunInstall(string vmType , string InstallFilePath )
         {
-            try
+
+            if (vmType.Contains("ZVM"))
             {
-                Console.WriteLine("Starting to install application");
-                Process process = new Process();
-                process.StartInfo.FileName = InstallFileName;
-                process.StartInfo.Arguments = string.Format(" /qb /i \"{0}\" ALLUSERS=1", InstallFilePath);
-                process.Start();
-                process.WaitForExit();
-                Console.WriteLine("Application installed successfully!");
-            }
-            catch
-            {
-                Console.WriteLine("There was a problem installing the application!");
-            }
+                try
+                {
+                    Console.WriteLine("Starting to install Zerto ZVM application");
+                    Process process = new Process();
+                    process.StartInfo.FileName = "Zerto Virtual Replication VMware Installer.exe";
+                    process.StartInfo.Arguments = string.Format(" /qb /i \"{0}\" ALLUSERS=1", InstallFilePath);
+                    process.Start();
+                    process.WaitForExit();
+                    Console.WriteLine("Application installed successfully!");
+                }
+                catch
+                {
+                    Console.WriteLine("There was a problem installing the application!");
+                }
+            }else if(vmType.Contains("ZCA"))
+                try
+                {
+                    Console.WriteLine("Starting to install Zerto ZCA application");
+                    Process process = new Process();
+                    process.StartInfo.FileName = "Zerto ZCA AWS Installer.exe";
+                    process.StartInfo.Arguments = string.Format(" /qb /i \"{0}\" ALLUSERS=1", InstallFilePath);
+                    process.Start();
+                    process.WaitForExit();
+                    Console.WriteLine("Application installed successfully!");
+                }
+                catch
+                {
+                    Console.WriteLine("There was a problem installing the application!");
+                }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Install_ZVM
       
         static void Main(string[] args)
         {
-            string InstallFileName = "./";
+            string vmType = "ZVM";
             string InstallFilePath = "";
             string DataStoreName = "DS1";
             string HostIp = "10.171.32.35";
@@ -30,7 +30,7 @@ namespace Install_ZVM
 
             //SelintInstall//
             SelintInstaller selintInstaller1 = new SelintInstaller();
-            selintInstaller1.RunInstall(InstallFileName, InstallFilePath);
+            selintInstaller1.RunInstall(vmType, InstallFilePath);
 
             //Open Chrome and enter ZVM GUI //
             IWebDriver driver = new ChromeDriver();
