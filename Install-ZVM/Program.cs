@@ -28,6 +28,7 @@ namespace Install_ZVM
                  Password = Console.ReadLine();
             */
 
+
             //SelintInstall//
             SelintInstaller selintInstaller1 = new SelintInstaller();
             selintInstaller1.RunInstall(vmType, InstallFilePath);
