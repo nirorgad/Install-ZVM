@@ -36,7 +36,7 @@ namespace Install_ZVM
             //Open Chrome and enter ZVM GUI //
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            var URL = "https://" + SiteIp + ":9669";
+            string URL = "https://" + SiteIp + ":9669";
             driver.Url = URL;
             Thread.Sleep(3000);
 

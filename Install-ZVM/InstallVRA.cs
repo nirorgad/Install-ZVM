@@ -9,7 +9,7 @@ namespace Install_ZVM
         {
             try
             {
-                var setupTab = driver.FindElement(By.XPath("//*[@class='promotional-tooltip__content']"));
+               IWebElement setupTab = driver.FindElement(By.XPath("//*[@class='promotional-tooltip__content']"));
                 setupTab.Click();
             }
             catch
@@ -26,14 +26,14 @@ namespace Install_ZVM
             try
             {
                 //Host select
-                var HostSelect = driver.FindElement(By.XPath("//*[@aria-label='Selected host']"));
+                IWebElement HostSelect = driver.FindElement(By.XPath("//*[@aria-label='Selected host']"));
                 HostSelect.Click();
-                var Host = driver.FindElement(By.XPath("//*[@aria-label='"+HostIp+"']"));
+                IWebElement Host = driver.FindElement(By.XPath("//*[@aria-label='"+HostIp+"']"));
                 Host.Click();
                 //Data store select 
-                var DatastoreSelect = driver.FindElement(By.XPath("//*[@aria-label='Selected datastore']"));
+                IWebElement DatastoreSelect = driver.FindElement(By.XPath("//*[@aria-label='Selected datastore']"));
                 DatastoreSelect.Click();
-                var DataStore = driver.FindElement(By.XPath("//*[contains(@aria-label,'"+DataStoreName+"')]"));
+                IWebElement DataStore = driver.FindElement(By.XPath("//*[contains(@aria-label,'"+DataStoreName+"')]"));
                 DataStore.Click();
 
 
